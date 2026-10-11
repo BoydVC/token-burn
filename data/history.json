@@ -1,0 +1,39 @@
+{
+  "note": "Only logged readings from usage.json and SHORTLIST/memory facts. Never invented.",
+  "timezone": "America/New_York",
+  "last_reset": "2026-10-08T19:42:00-04:00",
+  "next_reset": "2026-10-15T19:42:00-04:00",
+  "points": [
+    {
+      "t": "2026-10-09T08:24:00-04:00",
+      "used_pct": 1,
+      "source": "memory log Oct 9 ~8:24 AM ET"
+    },
+    {
+      "t": "2026-10-09T13:26:00-04:00",
+      "used_pct": 2,
+      "source": "memory log Oct 9 ~1:26 PM ET / SHORTLIST Routine Radar ship"
+    },
+    {
+      "t": "2026-10-10T08:20:00-04:00",
+      "used_pct": 3,
+      "source": "SHORTLIST Sat Oct 10 ~8:20 AM ET daily-usage-check"
+    },
+    {
+      "t": "2026-10-10T13:16:00-04:00",
+      "used_pct": 4,
+      "source": "SHORTLIST Sat Oct 10 ~1:16 PM ET / usage note"
+    },
+    {
+      "t": "2026-10-10T13:32:00-04:00",
+      "used_pct": 5,
+      "source": "/workspace/tokenmax/usage.json checked_at"
+    },
+    {
+      "t": "2026-10-11T08:15-04:00",
+      "used_pct": 7,
+      "source": "collect.py from /workspace/tokenmax/usage.json"
+    }
+  ],
+  "updated_at": "2026-10-11T08:17:45-04:00"
+}

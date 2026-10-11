@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Token Burn Theater — Grok Bot weekly burn</title>
+  <meta name="description" content="Mission-control burn theater for Boyd's Grok Bot weekly usage toward Thursday reset." />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <div id="stars" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="ember-dot" aria-hidden="true"></span>
+      <div>
+        <h1>TOKEN BURN THEATER</h1>
+        <p class="tagline">Grok Bot weekly · Thu→Thu · never invent numbers</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button type="button" id="btn-share" class="btn ghost">Share card</button>
+      <button type="button" id="btn-override" class="btn ghost">Paste %</button>
+      <div class="countdown-pill" id="countdown-pill" title="Countdown to next reset">
+        <span class="cd-label">RESET</span>
+        <span class="cd-value" id="countdown">—</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="stage">
+    <!-- HERO -->
+    <section class="panel hero" id="hero">
+      <div class="hero-left">
+        <canvas id="burn-canvas" width="520" height="520" aria-label="Animated burn gauge"></canvas>
+        <div class="hero-readout">
+          <div class="big-used"><span id="used-pct">—</span><small>%</small></div>
+          <div class="used-meta">used · check <span id="check-time">—</span></div>
+          <div class="target-row">pace target <strong id="target-pct">—</strong>% · <span id="status-badge" class="badge">—</span></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <h2 class="panel-title">Gap briefing</h2>
+        <p class="briefing" id="gap-briefing">Loading logged usage…</p>
+        <dl class="stat-grid">
+          <div><dt>Gap</dt><dd id="gap-pts">—</dd></div>
+          <div><dt>Week elapsed</dt><dd id="week-elapsed">—</dd></div>
+          <div><dt>Hours left</dt><dd id="hours-left">—</dd></div>
+          <div><dt>Projected EOW</dt><dd id="proj-eow">—</dd></div>
+        </dl>
+        <p class="formula" id="formula">target = (hours since last reset ÷ 168) × 95</p>
+        <p class="source-line" id="source-line"></p>
+      </div>
+    </section>
+
+    <!-- WEEK TIMELINE -->
+    <section class="panel timeline-panel">
+      <div class="panel-head">
+        <h2 class="panel-title">Week timeline</h2>
+        <span class="muted" id="timeline-caption">Thu Oct 8 → Thu Oct 15 · 7:42 PM ET resets</span>
+      </div>
+      <div class="rail-wrap">
+        <canvas id="timeline-canvas" width="1100" height="160"></canvas>
+      </div>
+      <p class="proj-note" id="proj-note"></p>
+    </section>
+
+    <div class="two-col">
+      <!-- BUILD LOG WALL -->
+      <section class="panel ships-panel">
+        <div class="panel-head">
+          <h2 class="panel-title">Build log wall</h2>
+          <span class="muted">fleet of burns</span>
+        </div>
+        <div class="ship-grid" id="ship-grid"></div>
+      </section>
+
+      <!-- SCENARIO PAD -->
+      <section class="panel scenario-panel">
+        <div class="panel-head">
+          <h2 class="panel-title">Scenario pad</h2>
+          <span class="hyp-tag">hypothetical</span>
+        </div>
+        <p class="muted small">Client-side math only. Does not change logged usage.</p>
+        <label class="slider-label">
+          Extra burn by Wednesday <strong id="extra-label">10</strong>%
+          <input type="range" id="extra-burn" min="0" max="90" value="10" step="1" />
+        </label>
+        <label class="slider-label">
+          Arrive by <strong id="arrive-label">Wed</strong>
+          <input type="range" id="arrive-day" min="0" max="4" value="3" step="1" />
+        </label>
+        <div class="scenario-out" id="scenario-out"></div>
+      </section>
+    </div>
+
+    <!-- HISTORY CHART -->
+    <section class="panel history-panel">
+      <div class="panel-head">
+        <h2 class="panel-title">Logged burn history</h2>
+        <span class="muted">real readings only</span>
+      </div>
+      <canvas id="history-canvas" width="1100" height="220"></canvas>
+      <ul class="hist-list" id="hist-list"></ul>
+    </section>
+  </main>
+
+  <!-- OVERRIDE MODAL -->
+  <dialog id="override-dialog">
+    <form method="dialog" id="override-form">
+      <h3>Paste fresh usage %</h3>
+      <p class="muted small">Stored in localStorage only. Does not invent or write usage.json.</p>
+      <label>Used % <input type="number" id="ov-used" min="0" max="100" step="0.1" required /></label>
+      <label>Checked at (local) <input type="datetime-local" id="ov-when" /></label>
+      <label>Note <input type="text" id="ov-note" placeholder="e.g. dashboard hard-reload" /></label>
+      <div class="dialog-actions">
+        <button type="submit" class="btn primary" value="save">Apply override</button>
+        <button type="button" class="btn ghost" id="ov-clear">Clear override</button>
+        <button type="submit" class="btn ghost" value="cancel">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- SHARE CARD -->
+  <div id="share-card" class="share-card hidden" aria-hidden="true">
+    <div class="sc-inner">
+      <div class="sc-brand">TOKEN BURN THEATER</div>
+      <div class="sc-used"><span id="sc-used">—</span>%</div>
+      <div class="sc-sub">vs <span id="sc-target">—</span>% pace · <span id="sc-status">—</span></div>
+      <div class="sc-gap" id="sc-gap">—</div>
+      <div class="sc-cd" id="sc-cd">—</div>
+      <div class="sc-foot">Grok Bot weekly · resets Thu ~7:42 PM ET · logged check only</div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    TokenMax · Token Burn Theater · data from <code>usage.json</code> + logged history · on-demand never enabled
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

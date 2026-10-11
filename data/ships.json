@@ -1,0 +1,24 @@
+{
+  "note": "Recent TokenMax ships from SHORTLIST.md — fleet of burns",
+  "ships": [
+    {"name": "Ship-it Stats", "port": 4260, "path": "ship-it-stats", "when": "2026-10-10 ~8:20 AM ET", "tag": "remaster"},
+    {"name": "Bot Deeplink Launcher", "port": 4262, "path": "bot-launcher", "when": "2026-10-10 ~8:20 AM ET", "tag": "remaster"},
+    {"name": "Mission Control", "port": 4245, "path": "mission-control", "when": "2026-10-10 ~8:20 AM ET", "tag": "remaster"},
+    {"name": "Sports Desk", "port": 4244, "path": "sports-desk", "when": "2026-10-10 ~8:20 AM ET", "tag": "remaster"},
+    {"name": "Token Pace Gauge", "port": 4273, "path": "token-pace", "when": "2026-10-10 ~1:16 PM ET", "tag": "new"},
+    {"name": "Explainer Studio", "port": null, "path": "explainer-studio", "when": "2026-10-10 ~1:16 PM ET", "tag": "remaster"},
+    {"name": "Fridge Tutor Board", "port": 4343, "path": "fridge-board", "when": "2026-10-10 ~1:16 PM ET", "tag": "remaster"},
+    {"name": "LLM Box Advisor", "port": 4949, "path": "llm-box-advisor", "when": "2026-10-10 ~1:16 PM ET", "tag": "remaster"},
+    {"name": "Ravens Film Room", "port": 4275, "path": "ravens-film-room", "when": "2026-10-10 ~1:30 PM ET", "tag": "remaster"},
+    {"name": "Chelsea Matchday", "port": 4276, "path": "chelsea-matchday", "when": "2026-10-10 ~1:30 PM ET", "tag": "remaster"},
+    {"name": "Starlink Globe", "port": 4277, "path": "starlink-globe", "when": "2026-10-10 ~1:30 PM ET", "tag": "remaster"},
+    {"name": "Bot Island", "port": 4747, "path": "bot-island", "when": "2026-10-10 ~1:30 PM ET", "tag": "remaster"},
+    {"name": "Orioles 2026", "port": 4278, "path": "orioles-2026", "when": "2026-10-10 ~1:40 PM ET", "tag": "remaster"},
+    {"name": "Terps Football", "port": 4279, "path": "terps-football", "when": "2026-10-10 ~1:40 PM ET", "tag": "remaster"},
+    {"name": "Hornets Tactics", "port": 4280, "path": "hornets-tactics", "when": "2026-10-10 ~1:40 PM ET", "tag": "remaster"},
+    {"name": "Routine Radar", "port": 4272, "path": "routine-radar", "when": "2026-10-09 ~1:11 PM ET", "tag": "new"},
+    {"name": "Fleet Doctor", "port": 4259, "path": "fleet-doctor", "when": "2026-10-09 ~1:11 PM ET", "tag": "refresh"},
+    {"name": "Grok Council", "port": null, "path": "grok-council", "when": "2026-10-09", "tag": "built"},
+    {"name": "Token Burn Theater", "port": 4284, "path": "token-burn", "when": "2026-10-11 ~8:14 AM ET", "tag": "new"}
+  ]
+}

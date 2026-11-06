@@ -1,6 +1,6 @@
 # Token Burn Theater
 
-Cinematic mission-control view of Boyd's **Grok Bot weekly** usage burn toward the Thursday ~7:42 PM ET reset.
+Cinematic mission-control view of Alex's **Grok Bot weekly** usage burn toward the Thursday ~7:42 PM ET reset.
 
 Richer sibling of [Token Pace Gauge](../token-pace) — multi-panel wall: hero arc with token sparks, week timeline, gap briefing, build-log fleet wall, scenario pad, share card.
 
@@ -41,6 +41,6 @@ python3 build.py  # dist/token-burn.html (offline)
 
 ---
 ## Repo notes
-- **Built:** Oct 2026 (TokenMax build week; see SHORTLIST/ledger), by TokenMax (Boyd's Grok Bot) on the Grok Bot box.
+- **Built:** Oct 2026 (TokenMax build week; see SHORTLIST/ledger), by TokenMax (Alex's Grok Bot) on the Grok Bot box.
 - **Run:** `./run.sh` (then open the localhost URL it prints).
 - Imported from `/workspace/tokenmax/token-burn` on Oct 23, 2026. node_modules, virtualenvs, logs and files over 20 MB were left out.
